@@ -315,6 +315,7 @@
     color: var(--color-white);
     font-family: fira code;
     line-height: 5px;
+    margin-top: 10px;
   }
   #name {
     padding-top: 15px;
@@ -1333,13 +1334,13 @@
     }
     .about-section-container {
       width: 100%;
-      height: fit-content;
+      height: auto;
       display: flex;
       height: calc(130vh - 115px);
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding-top: 60px;
+      padding-top: 100px;
     }
     .neon {
       padding-bottom: 20px;
@@ -1448,7 +1449,8 @@
       font-size: 42%;
     }
     .dp img {
-      width: 200px;
+      max-width: 100%;
+      height: auto;
     }
     .two-words {
       height: 50px;
@@ -1488,3 +1490,16 @@
       gap: 20px;
     }
   }
+
+  /* Fix for the about section on mobile */
+@media screen and (max-width: 768px) {
+  .about-section-container {
+    height: auto; /* Remove fixed height calculation */
+    padding: 100px 0;
+  }
+
+  .dp img {
+    max-width: 100%;
+    height: auto;
+  }
+}
